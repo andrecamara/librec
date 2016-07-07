@@ -27,6 +27,11 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Table;
+
 import librec.baseline.ConstantGuess;
 import librec.baseline.GlobalAverage;
 import librec.baseline.ItemAverage;
@@ -58,6 +63,7 @@ import librec.ranking.FISMauc;
 import librec.ranking.FISMrmse;
 import librec.ranking.GBPR;
 import librec.ranking.ItemBigram;
+import librec.ranking.KronRLS;
 import librec.ranking.LDA;
 import librec.ranking.LRMF;
 import librec.ranking.RankALS;
@@ -93,11 +99,6 @@ import librec.util.Logs;
 import librec.util.Randoms;
 import librec.util.Strings;
 import librec.util.Systems;
-
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
-import com.google.common.collect.Table;
 
 /**
  * Main Class of the LibRec Library
@@ -790,7 +791,9 @@ public class LibRec {
 			return new SLIM(trainMatrix, testMatrix, fold);
 		case "lda":
 			return new LDA(trainMatrix, testMatrix, fold);
-
+		case "kronrls":
+			return new KronRLS(trainMatrix, testMatrix, fold);
+			
 			/* extension */
 		case "nmf":
 			return new NMF(trainMatrix, testMatrix, fold);

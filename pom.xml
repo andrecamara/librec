@@ -21,6 +21,17 @@
             <artifactId>guava</artifactId>
             <version>16.0</version>
         </dependency>
+        <dependency>
+        	<groupId>org.apache.commons</groupId>
+        	<artifactId>commons-math3</artifactId>
+        	<version>3.6.1</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.kie.modules</groupId>
+        	<artifactId>org-apache-commons-lang3</artifactId>
+        	<version>6.4.0.Final</version>
+        	<type>pom</type>
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>

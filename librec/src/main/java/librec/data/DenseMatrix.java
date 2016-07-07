@@ -912,7 +912,7 @@ public class DenseMatrix implements Serializable {
 	}
 
 	/**
-	 * @return Moore¨CPenrose pseudoinverse based on singular value decomposition (SVD)
+	 * @return Mooreï¿½CPenrose pseudoinverse based on singular value decomposition (SVD)
 	 */
 	public DenseMatrix pinv() {
 
@@ -978,5 +978,10 @@ public class DenseMatrix implements Serializable {
 	public String toString() {
 		return Strings.toString(data);
 	}
+	
+	public double[][] getData() {
+		return data;
+	}
+
 
 }
